@@ -10,10 +10,8 @@ import java.util.*
 @RestController
 class UserController (private val userRepository: UserRepository){
 
-
-
     @GetMapping("/getUsers")
-    @CrossOrigin(origins = ["http://localhost:4200"])
+    @CrossOrigin(origins = ["*"])
     fun getUsers(): Set<User>{
 
         return userRepository.findAll()
